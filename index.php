@@ -194,7 +194,7 @@
                 }
                 include "view/taikhoan/quenmk.php";
                 break;
-            // ---------------------------------------- Đăng xuất tài khoản ----------------------------------------
+            // ----------------------------------- Đăng xuất tài khoản ---------------------------------
             case 'thoat':
                 session_unset();
                 header('Location: index.php');
@@ -362,8 +362,12 @@
                         $id_vc = isset($_POST['id_vc']) ? $_POST['id_vc'] : null;
                     
                         if($pttt == "Thanh toán bằng tiền mặt"){
+                         
                             insert_hoadon($id_tk,$tong,$pttt,$username,$email,$sdt,$address);
+
+                           
                             $id_hoadon = lay_id_hoadon();
+                           
 
                             foreach ($_SESSION['mycart'] as $cart) {
                                 $name = $cart[0]; 
